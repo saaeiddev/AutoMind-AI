@@ -1,0 +1,5 @@
+# Reference only. Do not commit real production secrets.
+AUTOMIND_AI_BASE_URL=https://your-provider-api.example/v1
+AUTOMIND_AI_API_KEY=replace_me
+AUTOMIND_AI_MODEL=replace_me
+AUTOMIND_BACKEND_CLIENT_TOKEN=replace_with_random_client_token

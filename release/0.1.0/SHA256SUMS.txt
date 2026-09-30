@@ -1,0 +1,2 @@
+c73c4a9a0ade92a5726d5ac29e18d7eb68facdadbb4970e4f461d10c410eff21  AutoMindAI.exe
+d6ffa94f88d50299e69ac9f63a17de881cc2f6cf2635180db206ac3c9728457b  AutoMindAI-Setup.exe

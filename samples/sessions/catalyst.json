@@ -1,0 +1,230 @@
+{
+  "id": "510c5b83-104e-4249-a5b5-1622df504948",
+  "vehicle_id": "dde38089-7e4c-433d-824d-8ec6d0b9272b",
+  "started_at": "2026-09-30T16:18:19.927731+00:00",
+  "ended_at": "",
+  "adapter": "Built-in Vehicle Simulator",
+  "connection_mode": "simulation",
+  "scenario": "Catalyst Efficiency Fault",
+  "dtcs": [
+    {
+      "code": "P0420",
+      "status": "Stored",
+      "description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+      "subsystem": "Emissions / Catalyst",
+      "severity": "Medium",
+      "freeze_frame": {
+        "010C": 1820,
+        "0105": 92,
+        "0114": 0.7
+      },
+      "possible_causes": [
+        "Aged or damaged catalytic converter",
+        "Exhaust leak",
+        "Upstream engine/fueling problem",
+        "O2 sensor issue",
+        "Persistent misfire or rich operation"
+      ],
+      "symptoms": [
+        "Check-engine light",
+        "Often few drivability symptoms"
+      ],
+      "recommended_checks": [
+        "Resolve active misfire/fueling codes first",
+        "Inspect exhaust for leaks",
+        "Compare upstream/downstream O2 behavior",
+        "Verify engine reaches operating temperature",
+        "Evaluate catalyst only after upstream causes are excluded"
+      ],
+      "related_pids": [
+        "0114",
+        "0105",
+        "0106",
+        "0107"
+      ]
+    }
+  ],
+  "live_data": {
+    "010C": {
+      "pid": "010C",
+      "name": "Engine RPM",
+      "value": 782.45,
+      "unit": "rpm",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928672+00:00"
+    },
+    "010D": {
+      "pid": "010D",
+      "name": "Vehicle Speed",
+      "value": 0,
+      "unit": "km/h",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928681+00:00"
+    },
+    "0105": {
+      "pid": "0105",
+      "name": "Engine Coolant Temperature",
+      "value": 89.85,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928685+00:00"
+    },
+    "010F": {
+      "pid": "010F",
+      "name": "Intake Air Temperature",
+      "value": 30.03,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928688+00:00"
+    },
+    "0104": {
+      "pid": "0104",
+      "name": "Calculated Engine Load",
+      "value": 24.34,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928691+00:00"
+    },
+    "0111": {
+      "pid": "0111",
+      "name": "Throttle Position",
+      "value": 12.73,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928694+00:00"
+    },
+    "0110": {
+      "pid": "0110",
+      "name": "MAF Air Flow Rate",
+      "value": 3.44,
+      "unit": "g/s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928697+00:00"
+    },
+    "010B": {
+      "pid": "010B",
+      "name": "Intake Manifold Absolute Pressure",
+      "value": 34.14,
+      "unit": "kPa",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928701+00:00"
+    },
+    "0106": {
+      "pid": "0106",
+      "name": "Short-Term Fuel Trim Bank 1",
+      "value": 1.4,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928704+00:00"
+    },
+    "0107": {
+      "pid": "0107",
+      "name": "Long-Term Fuel Trim Bank 1",
+      "value": 1.95,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928706+00:00"
+    },
+    "0114": {
+      "pid": "0114",
+      "name": "O2 Sensor 1 Voltage",
+      "value": 0.62,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928709+00:00"
+    },
+    "0142": {
+      "pid": "0142",
+      "name": "Control Module Voltage",
+      "value": 14.12,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928711+00:00"
+    },
+    "010E": {
+      "pid": "010E",
+      "name": "Ignition Timing Advance",
+      "value": 9.88,
+      "unit": "\u00b0",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928714+00:00"
+    },
+    "0146": {
+      "pid": "0146",
+      "name": "Ambient Air Temperature",
+      "value": 23.96,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928717+00:00"
+    },
+    "012F": {
+      "pid": "012F",
+      "name": "Fuel Tank Level Input",
+      "value": 57.99,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928720+00:00"
+    },
+    "011F": {
+      "pid": "011F",
+      "name": "Run Time Since Engine Start",
+      "value": 900.0,
+      "unit": "s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.928722+00:00"
+    }
+  },
+  "freeze_frame": {
+    "010C": 1820,
+    "0105": 92,
+    "0114": 0.7
+  },
+  "findings": [
+    {
+      "title": "P0420 - Catalyst System Efficiency Below Threshold (Bank 1)",
+      "evidence": [
+        "P0420 is reported as Stored: Catalyst System Efficiency Below Threshold (Bank 1).",
+        "Coolant temperature is 89.8 \u00b0C at this snapshot."
+      ],
+      "possible_causes": [
+        {
+          "cause": "Aged or damaged catalytic converter",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Exhaust leak",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Upstream engine/fueling problem",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "O2 sensor issue",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Persistent misfire or rich operation",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        }
+      ],
+      "recommended_steps": [
+        "Resolve active misfire/fueling codes first",
+        "Inspect exhaust for leaks",
+        "Compare upstream/downstream O2 behavior",
+        "Verify engine reaches operating temperature",
+        "Evaluate catalyst only after upstream causes are excluded"
+      ],
+      "confidence": "Moderate: based on the reported DTC and available OBD-II measurements; confirm with vehicle-specific testing.",
+      "warnings": []
+    }
+  ],
+  "ai_analysis": null,
+  "user_notes": "",
+  "health_status": "Check Recommended"
+}

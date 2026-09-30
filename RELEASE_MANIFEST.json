@@ -1,0 +1,21 @@
+{
+  "product": "AutoMind AI",
+  "version": "0.1.0",
+  "edition": "MVP",
+  "target_platform": "Windows 11 x64",
+  "source_status": "complete MVP source package",
+  "automated_tests": 34,
+  "self_test": "PASS in current Linux build environment",
+  "headless_ui_smoke_test": "PASS in current Linux build environment",
+  "sample_pdf_visual_check": "PASS in current Linux build environment",
+  "windows_executable_status": "Build pipeline prepared; native Windows build not executed in this Linux environment",
+  "expected_windows_outputs": [
+    "dist/AutoMindAI.exe",
+    "dist/installer/AutoMindAI-Setup.exe",
+    "dist/SHA256SUMS.txt"
+  ],
+  "windows_ci_workflow": ".github/workflows/windows-build.yml",
+  "windows_build_script": "scripts/build_windows.ps1",
+  "installer_script": "installer/AutoMindAI.iss",
+  "code_signing": "unsigned unless a real code-signing certificate is supplied"
+}

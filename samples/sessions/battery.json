@@ -1,0 +1,244 @@
+{
+  "id": "d764c89c-4709-4190-8bbd-a73b2995c278",
+  "vehicle_id": "bed22a01-c422-4d07-b191-e27a5aee2635",
+  "started_at": "2026-09-30T16:18:19.919934+00:00",
+  "ended_at": "",
+  "adapter": "Built-in Vehicle Simulator",
+  "connection_mode": "simulation",
+  "scenario": "Weak Battery / Charging Problem",
+  "dtcs": [
+    {
+      "code": "P0562",
+      "status": "Stored",
+      "description": "System Voltage Low",
+      "subsystem": "Electrical / Charging",
+      "severity": "High",
+      "freeze_frame": {
+        "010C": 735,
+        "0142": 11.1,
+        "0105": 82
+      },
+      "possible_causes": [
+        "Weak battery",
+        "Alternator/charging fault",
+        "Loose/corroded terminals",
+        "Ground fault",
+        "Drive-belt issue",
+        "High electrical load"
+      ],
+      "symptoms": [
+        "Slow cranking",
+        "Multiple warning lights",
+        "Electronic module faults",
+        "Possible stalling"
+      ],
+      "recommended_checks": [
+        "Measure battery voltage engine off",
+        "Measure charging voltage engine running",
+        "Inspect terminals and grounds",
+        "Check belt condition/tension where applicable",
+        "Perform battery load/conductance test"
+      ],
+      "related_pids": [
+        "0142",
+        "010C"
+      ]
+    }
+  ],
+  "live_data": {
+    "010C": {
+      "pid": "010C",
+      "name": "Engine RPM",
+      "value": 723.54,
+      "unit": "rpm",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920806+00:00"
+    },
+    "010D": {
+      "pid": "010D",
+      "name": "Vehicle Speed",
+      "value": 0,
+      "unit": "km/h",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920814+00:00"
+    },
+    "0105": {
+      "pid": "0105",
+      "name": "Engine Coolant Temperature",
+      "value": 89.85,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920818+00:00"
+    },
+    "010F": {
+      "pid": "010F",
+      "name": "Intake Air Temperature",
+      "value": 30.03,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920821+00:00"
+    },
+    "0104": {
+      "pid": "0104",
+      "name": "Calculated Engine Load",
+      "value": 24.34,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920824+00:00"
+    },
+    "0111": {
+      "pid": "0111",
+      "name": "Throttle Position",
+      "value": 12.73,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920827+00:00"
+    },
+    "0110": {
+      "pid": "0110",
+      "name": "MAF Air Flow Rate",
+      "value": 3.44,
+      "unit": "g/s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920830+00:00"
+    },
+    "010B": {
+      "pid": "010B",
+      "name": "Intake Manifold Absolute Pressure",
+      "value": 34.14,
+      "unit": "kPa",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920832+00:00"
+    },
+    "0106": {
+      "pid": "0106",
+      "name": "Short-Term Fuel Trim Bank 1",
+      "value": 1.4,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920835+00:00"
+    },
+    "0107": {
+      "pid": "0107",
+      "name": "Long-Term Fuel Trim Bank 1",
+      "value": 1.95,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920838+00:00"
+    },
+    "0114": {
+      "pid": "0114",
+      "name": "O2 Sensor 1 Voltage",
+      "value": 0.55,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920840+00:00"
+    },
+    "0142": {
+      "pid": "0142",
+      "name": "Control Module Voltage",
+      "value": 11.39,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920843+00:00"
+    },
+    "010E": {
+      "pid": "010E",
+      "name": "Ignition Timing Advance",
+      "value": 9.88,
+      "unit": "\u00b0",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920846+00:00"
+    },
+    "0146": {
+      "pid": "0146",
+      "name": "Ambient Air Temperature",
+      "value": 23.96,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920849+00:00"
+    },
+    "012F": {
+      "pid": "012F",
+      "name": "Fuel Tank Level Input",
+      "value": 57.99,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920854+00:00"
+    },
+    "011F": {
+      "pid": "011F",
+      "name": "Run Time Since Engine Start",
+      "value": 900.0,
+      "unit": "s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.920856+00:00"
+    }
+  },
+  "freeze_frame": {
+    "010C": 735,
+    "0142": 11.1,
+    "0105": 82
+  },
+  "findings": [
+    {
+      "title": "P0562 - System Voltage Low",
+      "evidence": [
+        "P0562 is reported as Stored: System Voltage Low.",
+        "Control module voltage is 11.39 V."
+      ],
+      "possible_causes": [
+        {
+          "cause": "Low system voltage presently measured",
+          "priority": "Higher",
+          "reason": "The ECU-reported voltage is below 12.0 V."
+        },
+        {
+          "cause": "Weak battery",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Alternator/charging fault",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Loose/corroded terminals",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Ground fault",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Drive-belt issue",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "High electrical load",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        }
+      ],
+      "recommended_steps": [
+        "Measure battery voltage directly with a suitable meter and verify charging voltage with the engine running.",
+        "Measure battery voltage engine off",
+        "Measure charging voltage engine running",
+        "Inspect terminals and grounds",
+        "Check belt condition/tension where applicable",
+        "Perform battery load/conductance test"
+      ],
+      "confidence": "Moderate: based on the reported DTC and available OBD-II measurements; confirm with vehicle-specific testing.",
+      "warnings": [
+        "Low voltage can create multiple secondary fault codes. Diagnose the power/ground system before interpreting unrelated module faults."
+      ]
+    }
+  ],
+  "ai_analysis": null,
+  "user_notes": "",
+  "health_status": "Attention Required"
+}

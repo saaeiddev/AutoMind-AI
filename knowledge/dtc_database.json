@@ -1,0 +1,101 @@
+{
+  "P0101": {
+    "description": "Mass or Volume Air Flow Circuit Range/Performance Problem",
+    "subsystem": "Air Intake / Fuel Metering",
+    "severity": "Medium",
+    "symptoms": ["Hesitation", "Poor acceleration", "Rough idle", "Reduced fuel economy"],
+    "causes": ["Contaminated MAF sensor", "Intake air leak", "Restricted air filter", "MAF wiring or connector issue", "Incorrect MAF scaling"],
+    "checks": ["Inspect intake ducting for leaks", "Compare MAF reading to engine load/RPM", "Inspect MAF connector and wiring", "Check air filter condition", "Clean or test MAF using manufacturer-approved procedure"],
+    "related_pids": ["010C", "0104", "0110", "0106", "010B"]
+  },
+  "P0130": {
+    "description": "O2 Sensor Circuit Malfunction (Bank 1 Sensor 1)",
+    "subsystem": "Fuel / Emissions",
+    "severity": "Medium",
+    "symptoms": ["Check-engine light", "Poor fuel economy", "Rough running"],
+    "causes": ["O2 sensor fault", "Wiring or connector fault", "Exhaust leak before sensor", "Fuel mixture problem"],
+    "checks": ["Inspect sensor wiring", "Check upstream O2 activity", "Inspect for exhaust leaks", "Review fuel trims"],
+    "related_pids": ["0114", "0106", "0107"]
+  },
+  "P0171": {
+    "description": "System Too Lean (Bank 1)",
+    "subsystem": "Fuel / Air Metering",
+    "severity": "Medium",
+    "symptoms": ["Rough idle", "Hesitation", "Poor acceleration", "Possible misfire"],
+    "causes": ["Vacuum leak", "MAF contamination or under-reporting", "Low fuel pressure or delivery", "Injector flow issue", "Exhaust leak upstream of O2 sensor", "O2/A/F sensor issue"],
+    "checks": ["Review STFT/LTFT at idle and elevated RPM", "Inspect intake/vacuum leaks", "Validate MAF against RPM/load", "Check fuel pressure if trims remain high", "Inspect exhaust for upstream leaks", "Evaluate injector balance if needed"],
+    "related_pids": ["0106", "0107", "0110", "010B", "0104"]
+  },
+  "P0172": {
+    "description": "System Too Rich (Bank 1)",
+    "subsystem": "Fuel / Air Metering",
+    "severity": "Medium",
+    "symptoms": ["Fuel smell", "Poor fuel economy", "Black exhaust smoke", "Rough idle"],
+    "causes": ["Leaking injector", "Excessive fuel pressure", "MAF over-reporting", "Restricted air intake", "O2/A/F sensor bias", "EVAP purge fault"],
+    "checks": ["Review negative STFT/LTFT", "Inspect air filter/intake restriction", "Check fuel pressure", "Evaluate injector leakage", "Compare MAF to expected airflow", "Check purge valve operation"],
+    "related_pids": ["0106", "0107", "0110", "010A", "0104"]
+  },
+  "P0300": {
+    "description": "Random/Multiple Cylinder Misfire Detected",
+    "subsystem": "Ignition / Combustion",
+    "severity": "High",
+    "symptoms": ["Rough running", "Loss of power", "Flashing MIL possible", "Catalyst damage risk under severe misfire"],
+    "causes": ["Ignition faults", "Fuel delivery problem", "Vacuum leak", "Low compression", "Timing issue", "Contaminated fuel"],
+    "checks": ["Identify affected cylinders with available misfire data", "Inspect ignition components", "Review fuel trims", "Check injector operation", "Inspect for vacuum leaks", "Perform compression/leak-down test if unresolved"],
+    "related_pids": ["010C", "0104", "0106", "0107", "0105"]
+  },
+  "P0301": {
+    "description": "Cylinder 1 Misfire Detected",
+    "subsystem": "Ignition / Combustion",
+    "severity": "High",
+    "symptoms": ["Rough running", "Loss of power", "Flashing MIL possible"],
+    "causes": ["Ignition coil", "Spark plug", "Injector", "Wiring", "Compression issue", "Vacuum leak affecting cylinder"],
+    "checks": ["Check Cylinder 1 ignition coil", "Inspect spark plug condition", "Check injector operation", "Inspect wiring/connectors", "Review fuel trims", "Perform compression/leak-down test if needed"],
+    "related_pids": ["010C", "0104", "0106", "0107"]
+  },
+  "P0302": {
+    "description": "Cylinder 2 Misfire Detected",
+    "subsystem": "Ignition / Combustion",
+    "severity": "High",
+    "symptoms": ["Rough idle", "Hesitation", "Loss of power", "Flashing MIL possible"],
+    "causes": ["Ignition coil", "Spark plug", "Injector", "Wiring", "Compression issue", "Vacuum leak affecting cylinder"],
+    "checks": ["Check Cylinder 2 ignition coil", "Compare or swap coil only where safe/appropriate", "Inspect Cylinder 2 spark plug", "Check injector operation", "Review fuel trims and related codes", "Perform compression/leak-down test if ignition/fuel checks pass"],
+    "related_pids": ["010C", "0104", "0106", "0107", "0105"]
+  },
+  "P0420": {
+    "description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "subsystem": "Emissions / Catalyst",
+    "severity": "Medium",
+    "symptoms": ["Check-engine light", "Often few drivability symptoms"],
+    "causes": ["Aged or damaged catalytic converter", "Exhaust leak", "Upstream engine/fueling problem", "O2 sensor issue", "Persistent misfire or rich operation"],
+    "checks": ["Resolve active misfire/fueling codes first", "Inspect exhaust for leaks", "Compare upstream/downstream O2 behavior", "Verify engine reaches operating temperature", "Evaluate catalyst only after upstream causes are excluded"],
+    "related_pids": ["0114", "0105", "0106", "0107"]
+  },
+  "P0562": {
+    "description": "System Voltage Low",
+    "subsystem": "Electrical / Charging",
+    "severity": "High",
+    "symptoms": ["Slow cranking", "Multiple warning lights", "Electronic module faults", "Possible stalling"],
+    "causes": ["Weak battery", "Alternator/charging fault", "Loose/corroded terminals", "Ground fault", "Drive-belt issue", "High electrical load"],
+    "checks": ["Measure battery voltage engine off", "Measure charging voltage engine running", "Inspect terminals and grounds", "Check belt condition/tension where applicable", "Perform battery load/conductance test"],
+    "related_pids": ["0142", "010C"]
+  },
+  "P0117": {
+    "description": "Engine Coolant Temperature Circuit Low Input",
+    "subsystem": "Engine Cooling / Sensor",
+    "severity": "High",
+    "symptoms": ["Incorrect temperature reading", "Poor cold start strategy", "Possible fan behavior issues"],
+    "causes": ["ECT sensor short to ground", "Wiring fault", "Connector fault", "ECU input fault"],
+    "checks": ["Compare ECT to ambient on cold engine", "Inspect connector/wiring", "Check sensor resistance/voltage per service information"],
+    "related_pids": ["0105", "0146"]
+  },
+  "P0128": {
+    "description": "Coolant Thermostat (Coolant Temperature Below Thermostat Regulating Temperature)",
+    "subsystem": "Engine Cooling",
+    "severity": "Low",
+    "symptoms": ["Slow warm-up", "Reduced heater performance", "Possible fuel economy impact"],
+    "causes": ["Thermostat stuck open", "ECT sensor bias", "Cooling fan running incorrectly"],
+    "checks": ["Observe warm-up curve", "Compare ECT with ambient from cold start", "Inspect thermostat behavior", "Verify fan command/operation"],
+    "related_pids": ["0105", "0146", "011F"]
+  }
+}

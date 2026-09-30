@@ -1,0 +1,222 @@
+{
+  "id": "1b5f4531-5226-430f-a1ca-33c3ba4e7a7b",
+  "vehicle_id": "38dfaac5-5211-46bb-992e-9c40c4caad60",
+  "started_at": "2026-09-30T16:18:19.917314+00:00",
+  "ended_at": "",
+  "adapter": "Built-in Vehicle Simulator",
+  "connection_mode": "simulation",
+  "scenario": "Engine Overheating",
+  "dtcs": [
+    {
+      "code": "P0117",
+      "status": "Pending",
+      "description": "Engine Coolant Temperature Circuit Low Input",
+      "subsystem": "Engine Cooling / Sensor",
+      "severity": "High",
+      "freeze_frame": {
+        "010C": 1050,
+        "0105": 119,
+        "0146": 31
+      },
+      "possible_causes": [
+        "ECT sensor short to ground",
+        "Wiring fault",
+        "Connector fault",
+        "ECU input fault"
+      ],
+      "symptoms": [
+        "Incorrect temperature reading",
+        "Poor cold start strategy",
+        "Possible fan behavior issues"
+      ],
+      "recommended_checks": [
+        "Compare ECT to ambient on cold engine",
+        "Inspect connector/wiring",
+        "Check sensor resistance/voltage per service information"
+      ],
+      "related_pids": [
+        "0105",
+        "0146"
+      ]
+    }
+  ],
+  "live_data": {
+    "010C": {
+      "pid": "010C",
+      "name": "Engine RPM",
+      "value": 782.45,
+      "unit": "rpm",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918153+00:00"
+    },
+    "010D": {
+      "pid": "010D",
+      "name": "Vehicle Speed",
+      "value": 0,
+      "unit": "km/h",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918161+00:00"
+    },
+    "0105": {
+      "pid": "0105",
+      "name": "Engine Coolant Temperature",
+      "value": 120.7,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918165+00:00"
+    },
+    "010F": {
+      "pid": "010F",
+      "name": "Intake Air Temperature",
+      "value": 30.03,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918169+00:00"
+    },
+    "0104": {
+      "pid": "0104",
+      "name": "Calculated Engine Load",
+      "value": 38.56,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918172+00:00"
+    },
+    "0111": {
+      "pid": "0111",
+      "name": "Throttle Position",
+      "value": 12.73,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918175+00:00"
+    },
+    "0110": {
+      "pid": "0110",
+      "name": "MAF Air Flow Rate",
+      "value": 3.44,
+      "unit": "g/s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918178+00:00"
+    },
+    "010B": {
+      "pid": "010B",
+      "name": "Intake Manifold Absolute Pressure",
+      "value": 34.14,
+      "unit": "kPa",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918181+00:00"
+    },
+    "0106": {
+      "pid": "0106",
+      "name": "Short-Term Fuel Trim Bank 1",
+      "value": 1.4,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918183+00:00"
+    },
+    "0107": {
+      "pid": "0107",
+      "name": "Long-Term Fuel Trim Bank 1",
+      "value": 1.95,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918186+00:00"
+    },
+    "0114": {
+      "pid": "0114",
+      "name": "O2 Sensor 1 Voltage",
+      "value": 0.55,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918188+00:00"
+    },
+    "0142": {
+      "pid": "0142",
+      "name": "Control Module Voltage",
+      "value": 14.12,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918191+00:00"
+    },
+    "010E": {
+      "pid": "010E",
+      "name": "Ignition Timing Advance",
+      "value": 9.88,
+      "unit": "\u00b0",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918194+00:00"
+    },
+    "0146": {
+      "pid": "0146",
+      "name": "Ambient Air Temperature",
+      "value": 23.96,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918197+00:00"
+    },
+    "012F": {
+      "pid": "012F",
+      "name": "Fuel Tank Level Input",
+      "value": 57.99,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918200+00:00"
+    },
+    "011F": {
+      "pid": "011F",
+      "name": "Run Time Since Engine Start",
+      "value": 900.0,
+      "unit": "s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.918202+00:00"
+    }
+  },
+  "freeze_frame": {
+    "010C": 1050,
+    "0105": 119,
+    "0146": 31
+  },
+  "findings": [
+    {
+      "title": "P0117 - Engine Coolant Temperature Circuit Low Input",
+      "evidence": [
+        "P0117 is reported as Pending: Engine Coolant Temperature Circuit Low Input.",
+        "Coolant temperature is 120.7 \u00b0C.",
+        "Ambient temperature is 24.0 \u00b0C.",
+        "Engine runtime is 900 s."
+      ],
+      "possible_causes": [
+        {
+          "cause": "ECT sensor short to ground",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Wiring fault",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Connector fault",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "ECU input fault",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        }
+      ],
+      "recommended_steps": [
+        "If the engine is actually overheating, stop operation safely and inspect the cooling system before continuing diagnosis.",
+        "Compare ECT to ambient on cold engine",
+        "Inspect connector/wiring",
+        "Check sensor resistance/voltage per service information"
+      ],
+      "confidence": "Moderate: based on the reported DTC and available OBD-II measurements; confirm with vehicle-specific testing.",
+      "warnings": []
+    }
+  ],
+  "ai_analysis": null,
+  "user_notes": "",
+  "health_status": "Attention Required"
+}

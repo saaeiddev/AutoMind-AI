@@ -1,0 +1,254 @@
+{
+  "id": "a1d6a837-6907-4144-9126-c187293700f9",
+  "vehicle_id": "d3fcfccc-4fee-4970-8e38-f6c0ed65ae53",
+  "started_at": "2026-09-30T16:18:19.914418+00:00",
+  "ended_at": "",
+  "adapter": "Built-in Vehicle Simulator",
+  "connection_mode": "simulation",
+  "scenario": "Lean Fuel Mixture",
+  "dtcs": [
+    {
+      "code": "P0171",
+      "status": "Stored",
+      "description": "System Too Lean (Bank 1)",
+      "subsystem": "Fuel / Air Metering",
+      "severity": "Medium",
+      "freeze_frame": {
+        "010C": 790,
+        "0106": 22.7,
+        "0107": 15.4,
+        "0110": 2.6,
+        "010B": 41
+      },
+      "possible_causes": [
+        "Vacuum leak",
+        "MAF contamination or under-reporting",
+        "Low fuel pressure or delivery",
+        "Injector flow issue",
+        "Exhaust leak upstream of O2 sensor",
+        "O2/A/F sensor issue"
+      ],
+      "symptoms": [
+        "Rough idle",
+        "Hesitation",
+        "Poor acceleration",
+        "Possible misfire"
+      ],
+      "recommended_checks": [
+        "Review STFT/LTFT at idle and elevated RPM",
+        "Inspect intake/vacuum leaks",
+        "Validate MAF against RPM/load",
+        "Check fuel pressure if trims remain high",
+        "Inspect exhaust for upstream leaks",
+        "Evaluate injector balance if needed"
+      ],
+      "related_pids": [
+        "0106",
+        "0107",
+        "0110",
+        "010B",
+        "0104"
+      ]
+    }
+  ],
+  "live_data": {
+    "010C": {
+      "pid": "010C",
+      "name": "Engine RPM",
+      "value": 782.45,
+      "unit": "rpm",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915473+00:00"
+    },
+    "010D": {
+      "pid": "010D",
+      "name": "Vehicle Speed",
+      "value": 0,
+      "unit": "km/h",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915481+00:00"
+    },
+    "0105": {
+      "pid": "0105",
+      "name": "Engine Coolant Temperature",
+      "value": 89.85,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915486+00:00"
+    },
+    "010F": {
+      "pid": "010F",
+      "name": "Intake Air Temperature",
+      "value": 30.03,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915489+00:00"
+    },
+    "0104": {
+      "pid": "0104",
+      "name": "Calculated Engine Load",
+      "value": 24.34,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915492+00:00"
+    },
+    "0111": {
+      "pid": "0111",
+      "name": "Throttle Position",
+      "value": 12.73,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915494+00:00"
+    },
+    "0110": {
+      "pid": "0110",
+      "name": "MAF Air Flow Rate",
+      "value": 3.44,
+      "unit": "g/s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915498+00:00"
+    },
+    "010B": {
+      "pid": "010B",
+      "name": "Intake Manifold Absolute Pressure",
+      "value": 40.22,
+      "unit": "kPa",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915501+00:00"
+    },
+    "0106": {
+      "pid": "0106",
+      "name": "Short-Term Fuel Trim Bank 1",
+      "value": 17.72,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915504+00:00"
+    },
+    "0107": {
+      "pid": "0107",
+      "name": "Long-Term Fuel Trim Bank 1",
+      "value": 15.81,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915506+00:00"
+    },
+    "0114": {
+      "pid": "0114",
+      "name": "O2 Sensor 1 Voltage",
+      "value": 0.2,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915509+00:00"
+    },
+    "0142": {
+      "pid": "0142",
+      "name": "Control Module Voltage",
+      "value": 14.12,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915512+00:00"
+    },
+    "010E": {
+      "pid": "010E",
+      "name": "Ignition Timing Advance",
+      "value": 9.88,
+      "unit": "\u00b0",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915515+00:00"
+    },
+    "0146": {
+      "pid": "0146",
+      "name": "Ambient Air Temperature",
+      "value": 23.96,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915518+00:00"
+    },
+    "012F": {
+      "pid": "012F",
+      "name": "Fuel Tank Level Input",
+      "value": 57.99,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915521+00:00"
+    },
+    "011F": {
+      "pid": "011F",
+      "name": "Run Time Since Engine Start",
+      "value": 900.0,
+      "unit": "s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.915523+00:00"
+    }
+  },
+  "freeze_frame": {
+    "010C": 790,
+    "0106": 22.7,
+    "0107": 15.4,
+    "0110": 2.6,
+    "010B": 41
+  },
+  "findings": [
+    {
+      "title": "P0171 - System Too Lean (Bank 1)",
+      "evidence": [
+        "P0171 is reported as Stored: System Too Lean (Bank 1).",
+        "STFT is 17.7%.",
+        "LTFT is 15.8%.",
+        "MAF is 3.44 g/s at 782 rpm.",
+        "Calculated engine load is 24.3%."
+      ],
+      "possible_causes": [
+        {
+          "cause": "Unmetered air or insufficient fuel delivery",
+          "priority": "Higher",
+          "reason": "Combined fuel trim is strongly positive."
+        },
+        {
+          "cause": "Vacuum leak",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "MAF contamination or under-reporting",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Low fuel pressure or delivery",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Injector flow issue",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Exhaust leak upstream of O2 sensor",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "O2/A/F sensor issue",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        }
+      ],
+      "recommended_steps": [
+        "Compare fuel trims at idle versus 2500 RPM: a large improvement off-idle can support an intake/vacuum leak hypothesis.",
+        "Review STFT/LTFT at idle and elevated RPM",
+        "Inspect intake/vacuum leaks",
+        "Validate MAF against RPM/load",
+        "Check fuel pressure if trims remain high",
+        "Inspect exhaust for upstream leaks",
+        "Evaluate injector balance if needed"
+      ],
+      "confidence": "Moderate: based on the reported DTC and available OBD-II measurements; confirm with vehicle-specific testing.",
+      "warnings": []
+    }
+  ],
+  "ai_analysis": null,
+  "user_notes": "",
+  "health_status": "Check Recommended"
+}

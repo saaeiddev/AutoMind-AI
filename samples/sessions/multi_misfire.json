@@ -1,0 +1,356 @@
+{
+  "id": "6b5b59ee-4ed0-4472-b324-c54cc4f690e9",
+  "vehicle_id": "3405d4cf-0b99-487d-9e8d-211be3792e8e",
+  "started_at": "2026-09-30T16:18:19.930419+00:00",
+  "ended_at": "",
+  "adapter": "Built-in Vehicle Simulator",
+  "connection_mode": "simulation",
+  "scenario": "Random Multiple Misfire",
+  "dtcs": [
+    {
+      "code": "P0300",
+      "status": "Stored",
+      "description": "Random/Multiple Cylinder Misfire Detected",
+      "subsystem": "Ignition / Combustion",
+      "severity": "High",
+      "freeze_frame": {
+        "010C": 1680,
+        "0106": 23.4,
+        "0107": 11.8,
+        "0110": 7.1
+      },
+      "possible_causes": [
+        "Ignition faults",
+        "Fuel delivery problem",
+        "Vacuum leak",
+        "Low compression",
+        "Timing issue",
+        "Contaminated fuel"
+      ],
+      "symptoms": [
+        "Rough running",
+        "Loss of power",
+        "Flashing MIL possible",
+        "Catalyst damage risk under severe misfire"
+      ],
+      "recommended_checks": [
+        "Identify affected cylinders with available misfire data",
+        "Inspect ignition components",
+        "Review fuel trims",
+        "Check injector operation",
+        "Inspect for vacuum leaks",
+        "Perform compression/leak-down test if unresolved"
+      ],
+      "related_pids": [
+        "010C",
+        "0104",
+        "0106",
+        "0107",
+        "0105"
+      ]
+    },
+    {
+      "code": "P0171",
+      "status": "Pending",
+      "description": "System Too Lean (Bank 1)",
+      "subsystem": "Fuel / Air Metering",
+      "severity": "Medium",
+      "freeze_frame": {
+        "010C": 1680,
+        "0106": 23.4,
+        "0107": 11.8,
+        "0110": 7.1
+      },
+      "possible_causes": [
+        "Vacuum leak",
+        "MAF contamination or under-reporting",
+        "Low fuel pressure or delivery",
+        "Injector flow issue",
+        "Exhaust leak upstream of O2 sensor",
+        "O2/A/F sensor issue"
+      ],
+      "symptoms": [
+        "Rough idle",
+        "Hesitation",
+        "Poor acceleration",
+        "Possible misfire"
+      ],
+      "recommended_checks": [
+        "Review STFT/LTFT at idle and elevated RPM",
+        "Inspect intake/vacuum leaks",
+        "Validate MAF against RPM/load",
+        "Check fuel pressure if trims remain high",
+        "Inspect exhaust for upstream leaks",
+        "Evaluate injector balance if needed"
+      ],
+      "related_pids": [
+        "0106",
+        "0107",
+        "0110",
+        "010B",
+        "0104"
+      ]
+    }
+  ],
+  "live_data": {
+    "010C": {
+      "pid": "010C",
+      "name": "Engine RPM",
+      "value": 649.8,
+      "unit": "rpm",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931366+00:00"
+    },
+    "010D": {
+      "pid": "010D",
+      "name": "Vehicle Speed",
+      "value": 0,
+      "unit": "km/h",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931375+00:00"
+    },
+    "0105": {
+      "pid": "0105",
+      "name": "Engine Coolant Temperature",
+      "value": 89.85,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931379+00:00"
+    },
+    "010F": {
+      "pid": "010F",
+      "name": "Intake Air Temperature",
+      "value": 30.03,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931382+00:00"
+    },
+    "0104": {
+      "pid": "0104",
+      "name": "Calculated Engine Load",
+      "value": 43.12,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931386+00:00"
+    },
+    "0111": {
+      "pid": "0111",
+      "name": "Throttle Position",
+      "value": 12.73,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931389+00:00"
+    },
+    "0110": {
+      "pid": "0110",
+      "name": "MAF Air Flow Rate",
+      "value": 3.44,
+      "unit": "g/s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931392+00:00"
+    },
+    "010B": {
+      "pid": "010B",
+      "name": "Intake Manifold Absolute Pressure",
+      "value": 34.14,
+      "unit": "kPa",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931395+00:00"
+    },
+    "0106": {
+      "pid": "0106",
+      "name": "Short-Term Fuel Trim Bank 1",
+      "value": 19.66,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931397+00:00"
+    },
+    "0107": {
+      "pid": "0107",
+      "name": "Long-Term Fuel Trim Bank 1",
+      "value": 11.81,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931400+00:00"
+    },
+    "0114": {
+      "pid": "0114",
+      "name": "O2 Sensor 1 Voltage",
+      "value": 0.55,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931403+00:00"
+    },
+    "0142": {
+      "pid": "0142",
+      "name": "Control Module Voltage",
+      "value": 14.12,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931406+00:00"
+    },
+    "010E": {
+      "pid": "010E",
+      "name": "Ignition Timing Advance",
+      "value": 9.88,
+      "unit": "\u00b0",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931409+00:00"
+    },
+    "0146": {
+      "pid": "0146",
+      "name": "Ambient Air Temperature",
+      "value": 23.96,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931412+00:00"
+    },
+    "012F": {
+      "pid": "012F",
+      "name": "Fuel Tank Level Input",
+      "value": 57.99,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931415+00:00"
+    },
+    "011F": {
+      "pid": "011F",
+      "name": "Run Time Since Engine Start",
+      "value": 900.0,
+      "unit": "s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.931418+00:00"
+    }
+  },
+  "freeze_frame": {
+    "010C": 1680,
+    "0106": 23.4,
+    "0107": 11.8,
+    "0110": 7.1
+  },
+  "findings": [
+    {
+      "title": "P0300 - Random/Multiple Cylinder Misfire Detected",
+      "evidence": [
+        "P0300 is reported as Stored: Random/Multiple Cylinder Misfire Detected.",
+        "Fuel trims: STFT 19.7%, LTFT 11.8%."
+      ],
+      "possible_causes": [
+        {
+          "cause": "Lean-condition related misfire",
+          "priority": "Higher",
+          "reason": "P0171 is present with the misfire code."
+        },
+        {
+          "cause": "Lean mixture / intake leak affecting combustion",
+          "priority": "Higher",
+          "reason": "Combined fuel trim is strongly positive."
+        },
+        {
+          "cause": "Ignition faults",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Fuel delivery problem",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Vacuum leak",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Low compression",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Timing issue",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Contaminated fuel",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        }
+      ],
+      "recommended_steps": [
+        "Check for intake/vacuum leaks and verify fuel delivery before replacing ignition parts at random.",
+        "Identify affected cylinders with available misfire data",
+        "Inspect ignition components",
+        "Review fuel trims",
+        "Check injector operation",
+        "Inspect for vacuum leaks",
+        "Perform compression/leak-down test if unresolved"
+      ],
+      "confidence": "Moderate: based on the reported DTC and available OBD-II measurements; confirm with vehicle-specific testing.",
+      "warnings": [
+        "A severe active misfire can overheat and damage the catalytic converter. Avoid prolonged driving if the MIL is flashing or the engine runs very poorly."
+      ]
+    },
+    {
+      "title": "P0171 - System Too Lean (Bank 1)",
+      "evidence": [
+        "P0171 is reported as Pending: System Too Lean (Bank 1).",
+        "STFT is 19.7%.",
+        "LTFT is 11.8%.",
+        "MAF is 3.44 g/s at 650 rpm.",
+        "Calculated engine load is 43.1%."
+      ],
+      "possible_causes": [
+        {
+          "cause": "Unmetered air or insufficient fuel delivery",
+          "priority": "Higher",
+          "reason": "Combined fuel trim is strongly positive."
+        },
+        {
+          "cause": "Vacuum leak",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "MAF contamination or under-reporting",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Low fuel pressure or delivery",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Injector flow issue",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Exhaust leak upstream of O2 sensor",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "O2/A/F sensor issue",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        }
+      ],
+      "recommended_steps": [
+        "Compare fuel trims at idle versus 2500 RPM: a large improvement off-idle can support an intake/vacuum leak hypothesis.",
+        "Review STFT/LTFT at idle and elevated RPM",
+        "Inspect intake/vacuum leaks",
+        "Validate MAF against RPM/load",
+        "Check fuel pressure if trims remain high",
+        "Inspect exhaust for upstream leaks",
+        "Evaluate injector balance if needed"
+      ],
+      "confidence": "Moderate: based on the reported DTC and available OBD-II measurements; confirm with vehicle-specific testing.",
+      "warnings": []
+    }
+  ],
+  "ai_analysis": null,
+  "user_notes": "",
+  "health_status": "Attention Required"
+}

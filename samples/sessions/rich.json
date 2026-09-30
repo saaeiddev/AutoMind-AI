@@ -1,0 +1,250 @@
+{
+  "id": "c6b8306c-2040-4ff7-9277-c7d68f2664b0",
+  "vehicle_id": "5611a5ee-0a90-4984-ab3a-149f4066a383",
+  "started_at": "2026-09-30T16:18:19.911629+00:00",
+  "ended_at": "",
+  "adapter": "Built-in Vehicle Simulator",
+  "connection_mode": "simulation",
+  "scenario": "Rich Fuel Mixture",
+  "dtcs": [
+    {
+      "code": "P0172",
+      "status": "Stored",
+      "description": "System Too Rich (Bank 1)",
+      "subsystem": "Fuel / Air Metering",
+      "severity": "Medium",
+      "freeze_frame": {
+        "010C": 820,
+        "0106": -20.3,
+        "0107": -13.1,
+        "0110": 4.1
+      },
+      "possible_causes": [
+        "Leaking injector",
+        "Excessive fuel pressure",
+        "MAF over-reporting",
+        "Restricted air intake",
+        "O2/A/F sensor bias",
+        "EVAP purge fault"
+      ],
+      "symptoms": [
+        "Fuel smell",
+        "Poor fuel economy",
+        "Black exhaust smoke",
+        "Rough idle"
+      ],
+      "recommended_checks": [
+        "Review negative STFT/LTFT",
+        "Inspect air filter/intake restriction",
+        "Check fuel pressure",
+        "Evaluate injector leakage",
+        "Compare MAF to expected airflow",
+        "Check purge valve operation"
+      ],
+      "related_pids": [
+        "0106",
+        "0107",
+        "0110",
+        "010A",
+        "0104"
+      ]
+    }
+  ],
+  "live_data": {
+    "010C": {
+      "pid": "010C",
+      "name": "Engine RPM",
+      "value": 782.45,
+      "unit": "rpm",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912692+00:00"
+    },
+    "010D": {
+      "pid": "010D",
+      "name": "Vehicle Speed",
+      "value": 0,
+      "unit": "km/h",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912700+00:00"
+    },
+    "0105": {
+      "pid": "0105",
+      "name": "Engine Coolant Temperature",
+      "value": 89.85,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912705+00:00"
+    },
+    "010F": {
+      "pid": "010F",
+      "name": "Intake Air Temperature",
+      "value": 30.03,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912708+00:00"
+    },
+    "0104": {
+      "pid": "0104",
+      "name": "Calculated Engine Load",
+      "value": 24.34,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912711+00:00"
+    },
+    "0111": {
+      "pid": "0111",
+      "name": "Throttle Position",
+      "value": 12.73,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912714+00:00"
+    },
+    "0110": {
+      "pid": "0110",
+      "name": "MAF Air Flow Rate",
+      "value": 3.44,
+      "unit": "g/s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912717+00:00"
+    },
+    "010B": {
+      "pid": "010B",
+      "name": "Intake Manifold Absolute Pressure",
+      "value": 34.14,
+      "unit": "kPa",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912720+00:00"
+    },
+    "0106": {
+      "pid": "0106",
+      "name": "Short-Term Fuel Trim Bank 1",
+      "value": -18.23,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912723+00:00"
+    },
+    "0107": {
+      "pid": "0107",
+      "name": "Long-Term Fuel Trim Bank 1",
+      "value": -14.12,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912725+00:00"
+    },
+    "0114": {
+      "pid": "0114",
+      "name": "O2 Sensor 1 Voltage",
+      "value": 0.85,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912728+00:00"
+    },
+    "0142": {
+      "pid": "0142",
+      "name": "Control Module Voltage",
+      "value": 14.12,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912731+00:00"
+    },
+    "010E": {
+      "pid": "010E",
+      "name": "Ignition Timing Advance",
+      "value": 9.88,
+      "unit": "\u00b0",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912733+00:00"
+    },
+    "0146": {
+      "pid": "0146",
+      "name": "Ambient Air Temperature",
+      "value": 23.96,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912736+00:00"
+    },
+    "012F": {
+      "pid": "012F",
+      "name": "Fuel Tank Level Input",
+      "value": 57.99,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912739+00:00"
+    },
+    "011F": {
+      "pid": "011F",
+      "name": "Run Time Since Engine Start",
+      "value": 900.0,
+      "unit": "s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.912741+00:00"
+    }
+  },
+  "freeze_frame": {
+    "010C": 820,
+    "0106": -20.3,
+    "0107": -13.1,
+    "0110": 4.1
+  },
+  "findings": [
+    {
+      "title": "P0172 - System Too Rich (Bank 1)",
+      "evidence": [
+        "P0172 is reported as Stored: System Too Rich (Bank 1).",
+        "STFT is -18.2%.",
+        "LTFT is -14.1%."
+      ],
+      "possible_causes": [
+        {
+          "cause": "Excess fuel or over-reported airflow",
+          "priority": "Higher",
+          "reason": "Combined fuel trim is strongly negative."
+        },
+        {
+          "cause": "Leaking injector",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Excessive fuel pressure",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "MAF over-reporting",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Restricted air intake",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "O2/A/F sensor bias",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "EVAP purge fault",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        }
+      ],
+      "recommended_steps": [
+        "Check for injector leakage, excessive fuel pressure, and implausible MAF readings before replacing oxygen sensors.",
+        "Review negative STFT/LTFT",
+        "Inspect air filter/intake restriction",
+        "Check fuel pressure",
+        "Evaluate injector leakage",
+        "Compare MAF to expected airflow",
+        "Check purge valve operation"
+      ],
+      "confidence": "Moderate: based on the reported DTC and available OBD-II measurements; confirm with vehicle-specific testing.",
+      "warnings": []
+    }
+  ],
+  "ai_analysis": null,
+  "user_notes": "",
+  "health_status": "Check Recommended"
+}

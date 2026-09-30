@@ -1,0 +1,221 @@
+{
+  "id": "c5f4020a-0d8a-4df6-9c7a-572af489294b",
+  "vehicle_id": "469b3a2e-46c2-4527-b33e-a9da1b058664",
+  "started_at": "2026-09-30T16:18:19.922592+00:00",
+  "ended_at": "",
+  "adapter": "Built-in Vehicle Simulator",
+  "connection_mode": "simulation",
+  "scenario": "Oxygen Sensor Fault",
+  "dtcs": [
+    {
+      "code": "P0130",
+      "status": "Stored",
+      "description": "O2 Sensor Circuit Malfunction (Bank 1 Sensor 1)",
+      "subsystem": "Fuel / Emissions",
+      "severity": "Medium",
+      "freeze_frame": {
+        "010C": 820,
+        "0114": 0.45,
+        "0106": 11.0
+      },
+      "possible_causes": [
+        "O2 sensor fault",
+        "Wiring or connector fault",
+        "Exhaust leak before sensor",
+        "Fuel mixture problem"
+      ],
+      "symptoms": [
+        "Check-engine light",
+        "Poor fuel economy",
+        "Rough running"
+      ],
+      "recommended_checks": [
+        "Inspect sensor wiring",
+        "Check upstream O2 activity",
+        "Inspect for exhaust leaks",
+        "Review fuel trims"
+      ],
+      "related_pids": [
+        "0114",
+        "0106",
+        "0107"
+      ]
+    }
+  ],
+  "live_data": {
+    "010C": {
+      "pid": "010C",
+      "name": "Engine RPM",
+      "value": 780.75,
+      "unit": "rpm",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923481+00:00"
+    },
+    "010D": {
+      "pid": "010D",
+      "name": "Vehicle Speed",
+      "value": 0,
+      "unit": "km/h",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923489+00:00"
+    },
+    "0105": {
+      "pid": "0105",
+      "name": "Engine Coolant Temperature",
+      "value": 90.05,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923494+00:00"
+    },
+    "010F": {
+      "pid": "010F",
+      "name": "Intake Air Temperature",
+      "value": 30.11,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923497+00:00"
+    },
+    "0104": {
+      "pid": "0104",
+      "name": "Calculated Engine Load",
+      "value": 23.47,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923500+00:00"
+    },
+    "0111": {
+      "pid": "0111",
+      "name": "Throttle Position",
+      "value": 13.17,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923502+00:00"
+    },
+    "0110": {
+      "pid": "0110",
+      "name": "MAF Air Flow Rate",
+      "value": 3.43,
+      "unit": "g/s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923505+00:00"
+    },
+    "010B": {
+      "pid": "010B",
+      "name": "Intake Manifold Absolute Pressure",
+      "value": 33.89,
+      "unit": "kPa",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923508+00:00"
+    },
+    "0106": {
+      "pid": "0106",
+      "name": "Short-Term Fuel Trim Bank 1",
+      "value": 9.69,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923511+00:00"
+    },
+    "0107": {
+      "pid": "0107",
+      "name": "Long-Term Fuel Trim Bank 1",
+      "value": 2.07,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923513+00:00"
+    },
+    "0114": {
+      "pid": "0114",
+      "name": "O2 Sensor 1 Voltage",
+      "value": 0.45,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923516+00:00"
+    },
+    "0142": {
+      "pid": "0142",
+      "name": "Control Module Voltage",
+      "value": 14.08,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923519+00:00"
+    },
+    "010E": {
+      "pid": "010E",
+      "name": "Ignition Timing Advance",
+      "value": 9.71,
+      "unit": "\u00b0",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923521+00:00"
+    },
+    "0146": {
+      "pid": "0146",
+      "name": "Ambient Air Temperature",
+      "value": 24.04,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923524+00:00"
+    },
+    "012F": {
+      "pid": "012F",
+      "name": "Fuel Tank Level Input",
+      "value": 58.0,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923527+00:00"
+    },
+    "011F": {
+      "pid": "011F",
+      "name": "Run Time Since Engine Start",
+      "value": 900.0,
+      "unit": "s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.923529+00:00"
+    }
+  },
+  "freeze_frame": {
+    "010C": 820,
+    "0114": 0.45,
+    "0106": 11.0
+  },
+  "findings": [
+    {
+      "title": "P0130 - O2 Sensor Circuit Malfunction (Bank 1 Sensor 1)",
+      "evidence": [
+        "P0130 is reported as Stored: O2 Sensor Circuit Malfunction (Bank 1 Sensor 1)."
+      ],
+      "possible_causes": [
+        {
+          "cause": "O2 sensor fault",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Wiring or connector fault",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Exhaust leak before sensor",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Fuel mixture problem",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        }
+      ],
+      "recommended_steps": [
+        "Inspect sensor wiring",
+        "Check upstream O2 activity",
+        "Inspect for exhaust leaks",
+        "Review fuel trims"
+      ],
+      "confidence": "Moderate: based on the reported DTC and available OBD-II measurements; confirm with vehicle-specific testing.",
+      "warnings": []
+    }
+  ],
+  "ai_analysis": null,
+  "user_notes": "",
+  "health_status": "Check Recommended"
+}

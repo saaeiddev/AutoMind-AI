@@ -1,0 +1,247 @@
+{
+  "id": "23a4f3c0-810c-43f9-9c56-8c1bf4c1eb7e",
+  "vehicle_id": "d6aa29cc-cea7-4232-9714-7dc095f89df2",
+  "started_at": "2026-09-30T16:18:19.895580+00:00",
+  "ended_at": "",
+  "adapter": "Built-in Vehicle Simulator",
+  "connection_mode": "simulation",
+  "scenario": "Cylinder 2 Misfire",
+  "dtcs": [
+    {
+      "code": "P0302",
+      "status": "Stored",
+      "description": "Cylinder 2 Misfire Detected",
+      "subsystem": "Ignition / Combustion",
+      "severity": "High",
+      "freeze_frame": {
+        "010C": 1420,
+        "0105": 88,
+        "0106": 10.2,
+        "0107": 4.1,
+        "0110": 8.8
+      },
+      "possible_causes": [
+        "Ignition coil",
+        "Spark plug",
+        "Injector",
+        "Wiring",
+        "Compression issue",
+        "Vacuum leak affecting cylinder"
+      ],
+      "symptoms": [
+        "Rough idle",
+        "Hesitation",
+        "Loss of power",
+        "Flashing MIL possible"
+      ],
+      "recommended_checks": [
+        "Check Cylinder 2 ignition coil",
+        "Compare or swap coil only where safe/appropriate",
+        "Inspect Cylinder 2 spark plug",
+        "Check injector operation",
+        "Review fuel trims and related codes",
+        "Perform compression/leak-down test if ignition/fuel checks pass"
+      ],
+      "related_pids": [
+        "010C",
+        "0104",
+        "0106",
+        "0107",
+        "0105"
+      ]
+    }
+  ],
+  "live_data": {
+    "010C": {
+      "pid": "010C",
+      "name": "Engine RPM",
+      "value": 696.54,
+      "unit": "rpm",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896773+00:00"
+    },
+    "010D": {
+      "pid": "010D",
+      "name": "Vehicle Speed",
+      "value": 0,
+      "unit": "km/h",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896781+00:00"
+    },
+    "0105": {
+      "pid": "0105",
+      "name": "Engine Coolant Temperature",
+      "value": 89.85,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896786+00:00"
+    },
+    "010F": {
+      "pid": "010F",
+      "name": "Intake Air Temperature",
+      "value": 30.03,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896789+00:00"
+    },
+    "0104": {
+      "pid": "0104",
+      "name": "Calculated Engine Load",
+      "value": 34.9,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896793+00:00"
+    },
+    "0111": {
+      "pid": "0111",
+      "name": "Throttle Position",
+      "value": 12.73,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896796+00:00"
+    },
+    "0110": {
+      "pid": "0110",
+      "name": "MAF Air Flow Rate",
+      "value": 3.44,
+      "unit": "g/s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896799+00:00"
+    },
+    "010B": {
+      "pid": "010B",
+      "name": "Intake Manifold Absolute Pressure",
+      "value": 34.14,
+      "unit": "kPa",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896801+00:00"
+    },
+    "0106": {
+      "pid": "0106",
+      "name": "Short-Term Fuel Trim Bank 1",
+      "value": 7.72,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896804+00:00"
+    },
+    "0107": {
+      "pid": "0107",
+      "name": "Long-Term Fuel Trim Bank 1",
+      "value": 1.95,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896807+00:00"
+    },
+    "0114": {
+      "pid": "0114",
+      "name": "O2 Sensor 1 Voltage",
+      "value": 0.55,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896809+00:00"
+    },
+    "0142": {
+      "pid": "0142",
+      "name": "Control Module Voltage",
+      "value": 14.12,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896812+00:00"
+    },
+    "010E": {
+      "pid": "010E",
+      "name": "Ignition Timing Advance",
+      "value": 9.88,
+      "unit": "\u00b0",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896815+00:00"
+    },
+    "0146": {
+      "pid": "0146",
+      "name": "Ambient Air Temperature",
+      "value": 23.96,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896818+00:00"
+    },
+    "012F": {
+      "pid": "012F",
+      "name": "Fuel Tank Level Input",
+      "value": 57.99,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896821+00:00"
+    },
+    "011F": {
+      "pid": "011F",
+      "name": "Run Time Since Engine Start",
+      "value": 900.0,
+      "unit": "s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.896823+00:00"
+    }
+  },
+  "freeze_frame": {
+    "010C": 1420,
+    "0105": 88,
+    "0106": 10.2,
+    "0107": 4.1,
+    "0110": 8.8
+  },
+  "findings": [
+    {
+      "title": "P0302 - Cylinder 2 Misfire Detected",
+      "evidence": [
+        "P0302 is reported as Stored: Cylinder 2 Misfire Detected.",
+        "Fuel trims: STFT 7.7%, LTFT 1.9%."
+      ],
+      "possible_causes": [
+        {
+          "cause": "Ignition coil",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Spark plug",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Injector",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Wiring",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Compression issue",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Vacuum leak affecting cylinder",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        }
+      ],
+      "recommended_steps": [
+        "Check Cylinder 2 ignition coil",
+        "Compare or swap coil only where safe/appropriate",
+        "Inspect Cylinder 2 spark plug",
+        "Check injector operation",
+        "Review fuel trims and related codes",
+        "Perform compression/leak-down test if ignition/fuel checks pass"
+      ],
+      "confidence": "Moderate: based on the reported DTC and available OBD-II measurements; confirm with vehicle-specific testing.",
+      "warnings": [
+        "A severe active misfire can overheat and damage the catalytic converter. Avoid prolonged driving if the MIL is flashing or the engine runs very poorly."
+      ]
+    }
+  ],
+  "ai_analysis": null,
+  "user_notes": "",
+  "health_status": "Attention Required"
+}

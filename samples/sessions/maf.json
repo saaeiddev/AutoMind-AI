@@ -1,0 +1,240 @@
+{
+  "id": "a7c007da-bf07-4794-89ce-0a4ac718d014",
+  "vehicle_id": "0d573dcb-a324-4c41-8f74-61ed0241532e",
+  "started_at": "2026-09-30T16:18:19.925103+00:00",
+  "ended_at": "",
+  "adapter": "Built-in Vehicle Simulator",
+  "connection_mode": "simulation",
+  "scenario": "MAF Sensor Fault",
+  "dtcs": [
+    {
+      "code": "P0101",
+      "status": "Stored",
+      "description": "Mass or Volume Air Flow Circuit Range/Performance Problem",
+      "subsystem": "Air Intake / Fuel Metering",
+      "severity": "Medium",
+      "freeze_frame": {
+        "010C": 910,
+        "0110": 0.7,
+        "0106": 15.3
+      },
+      "possible_causes": [
+        "Contaminated MAF sensor",
+        "Intake air leak",
+        "Restricted air filter",
+        "MAF wiring or connector issue",
+        "Incorrect MAF scaling"
+      ],
+      "symptoms": [
+        "Hesitation",
+        "Poor acceleration",
+        "Rough idle",
+        "Reduced fuel economy"
+      ],
+      "recommended_checks": [
+        "Inspect intake ducting for leaks",
+        "Compare MAF reading to engine load/RPM",
+        "Inspect MAF connector and wiring",
+        "Check air filter condition",
+        "Clean or test MAF using manufacturer-approved procedure"
+      ],
+      "related_pids": [
+        "010C",
+        "0104",
+        "0110",
+        "0106",
+        "010B"
+      ]
+    }
+  ],
+  "live_data": {
+    "010C": {
+      "pid": "010C",
+      "name": "Engine RPM",
+      "value": 782.45,
+      "unit": "rpm",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925955+00:00"
+    },
+    "010D": {
+      "pid": "010D",
+      "name": "Vehicle Speed",
+      "value": 0,
+      "unit": "km/h",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925963+00:00"
+    },
+    "0105": {
+      "pid": "0105",
+      "name": "Engine Coolant Temperature",
+      "value": 89.85,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925967+00:00"
+    },
+    "010F": {
+      "pid": "010F",
+      "name": "Intake Air Temperature",
+      "value": 30.03,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925970+00:00"
+    },
+    "0104": {
+      "pid": "0104",
+      "name": "Calculated Engine Load",
+      "value": 24.34,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925973+00:00"
+    },
+    "0111": {
+      "pid": "0111",
+      "name": "Throttle Position",
+      "value": 12.73,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925976+00:00"
+    },
+    "0110": {
+      "pid": "0110",
+      "name": "MAF Air Flow Rate",
+      "value": 0.66,
+      "unit": "g/s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925979+00:00"
+    },
+    "010B": {
+      "pid": "010B",
+      "name": "Intake Manifold Absolute Pressure",
+      "value": 34.14,
+      "unit": "kPa",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925982+00:00"
+    },
+    "0106": {
+      "pid": "0106",
+      "name": "Short-Term Fuel Trim Bank 1",
+      "value": 13.77,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925985+00:00"
+    },
+    "0107": {
+      "pid": "0107",
+      "name": "Long-Term Fuel Trim Bank 1",
+      "value": 1.95,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925988+00:00"
+    },
+    "0114": {
+      "pid": "0114",
+      "name": "O2 Sensor 1 Voltage",
+      "value": 0.55,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925990+00:00"
+    },
+    "0142": {
+      "pid": "0142",
+      "name": "Control Module Voltage",
+      "value": 14.12,
+      "unit": "V",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925993+00:00"
+    },
+    "010E": {
+      "pid": "010E",
+      "name": "Ignition Timing Advance",
+      "value": 9.88,
+      "unit": "\u00b0",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925996+00:00"
+    },
+    "0146": {
+      "pid": "0146",
+      "name": "Ambient Air Temperature",
+      "value": 23.96,
+      "unit": "\u00b0C",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.925999+00:00"
+    },
+    "012F": {
+      "pid": "012F",
+      "name": "Fuel Tank Level Input",
+      "value": 57.99,
+      "unit": "%",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.926001+00:00"
+    },
+    "011F": {
+      "pid": "011F",
+      "name": "Run Time Since Engine Start",
+      "value": 900.0,
+      "unit": "s",
+      "supported": true,
+      "timestamp": "2026-09-30T16:18:19.926004+00:00"
+    }
+  },
+  "freeze_frame": {
+    "010C": 910,
+    "0110": 0.7,
+    "0106": 15.3
+  },
+  "findings": [
+    {
+      "title": "P0101 - Mass or Volume Air Flow Circuit Range/Performance Problem",
+      "evidence": [
+        "P0101 is reported as Stored: Mass or Volume Air Flow Circuit Range/Performance Problem.",
+        "MAF reports 0.66 g/s.",
+        "Engine speed is 782 rpm.",
+        "Throttle position is 12.7%."
+      ],
+      "possible_causes": [
+        {
+          "cause": "MAF signal implausibly low for a running engine",
+          "priority": "Higher",
+          "reason": "Measured airflow is below 1 g/s while RPM indicates the engine is running."
+        },
+        {
+          "cause": "Contaminated MAF sensor",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Intake air leak",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Restricted air filter",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "MAF wiring or connector issue",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        },
+        {
+          "cause": "Incorrect MAF scaling",
+          "priority": "Possible",
+          "reason": "Common cause for this DTC"
+        }
+      ],
+      "recommended_steps": [
+        "Inspect intake ducting for leaks",
+        "Compare MAF reading to engine load/RPM",
+        "Inspect MAF connector and wiring",
+        "Check air filter condition",
+        "Clean or test MAF using manufacturer-approved procedure"
+      ],
+      "confidence": "Moderate: based on the reported DTC and available OBD-II measurements; confirm with vehicle-specific testing.",
+      "warnings": []
+    }
+  ],
+  "ai_analysis": null,
+  "user_notes": "",
+  "health_status": "Check Recommended"
+}

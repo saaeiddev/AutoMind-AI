@@ -1,0 +1,186 @@
+{
+  "0104": {
+    "name": "Calculated Engine Load",
+    "unit": "%"
+  },
+  "0105": {
+    "name": "Engine Coolant Temperature",
+    "unit": "\u00b0C"
+  },
+  "0106": {
+    "name": "Short-Term Fuel Trim Bank 1",
+    "unit": "%"
+  },
+  "0107": {
+    "name": "Long-Term Fuel Trim Bank 1",
+    "unit": "%"
+  },
+  "0108": {
+    "name": "Short-Term Fuel Trim Bank 2",
+    "unit": "%"
+  },
+  "0109": {
+    "name": "Long-Term Fuel Trim Bank 2",
+    "unit": "%"
+  },
+  "010A": {
+    "name": "Fuel Pressure",
+    "unit": "kPa"
+  },
+  "010B": {
+    "name": "Intake Manifold Absolute Pressure",
+    "unit": "kPa"
+  },
+  "010C": {
+    "name": "Engine RPM",
+    "unit": "rpm"
+  },
+  "010D": {
+    "name": "Vehicle Speed",
+    "unit": "km/h"
+  },
+  "010E": {
+    "name": "Ignition Timing Advance",
+    "unit": "\u00b0"
+  },
+  "010F": {
+    "name": "Intake Air Temperature",
+    "unit": "\u00b0C"
+  },
+  "0110": {
+    "name": "MAF Air Flow Rate",
+    "unit": "g/s"
+  },
+  "0111": {
+    "name": "Throttle Position",
+    "unit": "%"
+  },
+  "0114": {
+    "name": "O2 Sensor 1 Voltage",
+    "unit": "V"
+  },
+  "0115": {
+    "name": "O2 Sensor 2 Voltage",
+    "unit": "V"
+  },
+  "0116": {
+    "name": "O2 Sensor 3 Voltage",
+    "unit": "V"
+  },
+  "0117": {
+    "name": "O2 Sensor 4 Voltage",
+    "unit": "V"
+  },
+  "0118": {
+    "name": "O2 Sensor 5 Voltage",
+    "unit": "V"
+  },
+  "0119": {
+    "name": "O2 Sensor 6 Voltage",
+    "unit": "V"
+  },
+  "011A": {
+    "name": "O2 Sensor 7 Voltage",
+    "unit": "V"
+  },
+  "011B": {
+    "name": "O2 Sensor 8 Voltage",
+    "unit": "V"
+  },
+  "011F": {
+    "name": "Run Time Since Engine Start",
+    "unit": "s"
+  },
+  "0121": {
+    "name": "Distance Traveled With MIL On",
+    "unit": "km"
+  },
+  "012C": {
+    "name": "Commanded EGR",
+    "unit": "%"
+  },
+  "012E": {
+    "name": "Commanded Evaporative Purge",
+    "unit": "%"
+  },
+  "0130": {
+    "name": "Warm-ups Since Codes Cleared",
+    "unit": "count"
+  },
+  "0131": {
+    "name": "Distance Since Codes Cleared",
+    "unit": "km"
+  },
+  "0133": {
+    "name": "Barometric Pressure",
+    "unit": "kPa"
+  },
+  "013C": {
+    "name": "Catalyst Temperature Bank 1 Sensor 1",
+    "unit": "\u00b0C"
+  },
+  "013D": {
+    "name": "Catalyst Temperature Bank 2 Sensor 1",
+    "unit": "\u00b0C"
+  },
+  "013E": {
+    "name": "Catalyst Temperature Bank 1 Sensor 2",
+    "unit": "\u00b0C"
+  },
+  "013F": {
+    "name": "Catalyst Temperature Bank 2 Sensor 2",
+    "unit": "\u00b0C"
+  },
+  "012F": {
+    "name": "Fuel Tank Level Input",
+    "unit": "%"
+  },
+  "0142": {
+    "name": "Control Module Voltage",
+    "unit": "V"
+  },
+  "0146": {
+    "name": "Ambient Air Temperature",
+    "unit": "\u00b0C"
+  },
+  "0145": {
+    "name": "Relative Throttle Position",
+    "unit": "%"
+  },
+  "0149": {
+    "name": "Accelerator Pedal Position D",
+    "unit": "%"
+  },
+  "014A": {
+    "name": "Accelerator Pedal Position E",
+    "unit": "%"
+  },
+  "014B": {
+    "name": "Accelerator Pedal Position F",
+    "unit": "%"
+  },
+  "014C": {
+    "name": "Commanded Throttle Actuator",
+    "unit": "%"
+  },
+  "0152": {
+    "name": "Ethanol Fuel Percentage",
+    "unit": "%"
+  },
+  "015A": {
+    "name": "Relative Accelerator Pedal Position",
+    "unit": "%"
+  },
+  "015B": {
+    "name": "Hybrid Battery Pack Remaining Life",
+    "unit": "%"
+  },
+  "015C": {
+    "name": "Engine Oil Temperature",
+    "unit": "\u00b0C"
+  },
+  "015E": {
+    "name": "Engine Fuel Rate",
+    "unit": "L/h"
+  }
+}
