@@ -1,0 +1,2 @@
+46af30a73aadca9797c1cbef0bcb62fd4d9ef2eefa7e62d5ddf0113ed765c5d1  AutoMindAI.exe
+abf4b391366a91f76d961c70928604cdcbaa9c1fa854eeefc2330ddbf4ad2000  AutoMindAI-Setup.exe
