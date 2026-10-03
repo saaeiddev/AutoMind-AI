@@ -1,6 +1,6 @@
 # AutoMind AI
 
-**AutoMind AI 0.1.0 MVP** is a real Windows desktop automotive diagnostic assistant focused on safe, read-oriented OBD-II diagnostics, deterministic local reasoning, diagnostic history, live data, professional PDF reports, and optional cloud AI analysis.
+**AutoMind AI 0.2.0** is a real Windows desktop automotive diagnostic assistant focused on safe, read-oriented OBD-II diagnostics, deterministic local reasoning, diagnostic history, live data, professional PDF reports, and optional cloud AI analysis.
 
 > AutoMind AI is a diagnostic assistant. It does not replace qualified inspection, manufacturer service information, or professional repair procedures. Mechanical causes shown by the software are hypotheses until verified by testing.
 
@@ -25,7 +25,7 @@ The application intentionally separates:
 
 ![AutoMind AI Live Data](docs/images/live-data.png)
 
-## Current MVP features
+## AutoMind AI 0.2 highlights\n\n- New black / white / orange automotive UI\n- Cut-corner polygon controls with industrial interaction states\n- Windows 11 Bahnschrift typography\n- Existing diagnostics, OBD-II, simulator, AI, history and PDF features retained\n\n## Current features
 
 - Windows 11 x64 desktop application
 - Read-focused ELM327 USB/serial architecture
@@ -101,7 +101,7 @@ Unsupported or unavailable ECU values are displayed as **Not Supported** or **Un
 
 ## Safety boundary
 
-Version 0.1.0 intentionally does **not** expose:
+Version 0.2.0 intentionally does **not** expose:
 
 - ECU flashing/reprogramming
 - arbitrary CAN-frame transmission
@@ -236,7 +236,7 @@ The test suite covers protocol parsing, simulation, diagnostic rules, database p
 
 The current source snapshot passes **34 automated tests** plus the packaged-runtime self-test and a headless desktop UI smoke test in the available Linux build environment.
 
-## Known limitations — 0.1.0 MVP
+## Known limitations — 0.2.0
 
 - Standard generic OBD-II only; no manufacturer-specific diagnostics yet.
 - No J2534 support yet.

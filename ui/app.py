@@ -15,7 +15,7 @@ from core.paths import resource_path
 from core.units import format_value
 from simulator.scenarios import VehicleSimulator
 from ui.theme import COLORS, apply_theme
-from ui.widgets import LiveChart, MetricCard, StatusPill
+from ui.widgets import LiveChart, MetricCard, PolygonButton, StatusPill
 from vehicle.models import DiagnosticSession, VehicleProfile
 
 log = logging.getLogger("automind.ui")
@@ -39,7 +39,7 @@ class AutoMindApplication(tk.Tk):
         super().__init__()
         self.controller = controller
         self.title(PRODUCT_NAME)
-        self.geometry("1420x880")
+        self.geometry("1460x900")
         self.minsize(960, 640)
         self.configure(bg=COLORS["bg"])
         try:
@@ -82,7 +82,7 @@ class AutoMindApplication(tk.Tk):
         ttk.Label(brand_text, text="Automotive Diagnostics", style="PanelMuted.TLabel", font=("Segoe UI", 8)).pack(anchor="w")
 
         for idx, (label, key) in enumerate(self.NAV_ITEMS, start=1):
-            ttk.Button(sidebar, text=label, style="Nav.TButton", command=lambda k=key: self.show_page(k)).grid(row=idx, column=0, sticky="ew", padx=8, pady=1)
+            PolygonButton(sidebar, text=label, style="Nav.TButton", command=lambda k=key: self.show_page(k)).grid(row=idx, column=0, sticky="ew", padx=8, pady=1)
 
         footer = ttk.Frame(sidebar, style="Panel.TFrame", padding=16)
         footer.grid(row=99, column=0, sticky="sew")
@@ -187,10 +187,10 @@ class AutoMindApplication(tk.Tk):
         ttk.Label(quick, text="Quick Actions", style="Panel.TLabel", font=("Segoe UI Semibold", 12)).pack(anchor="w")
         row = ttk.Frame(quick, style="Panel.TFrame")
         row.pack(fill="x", pady=(14,10))
-        ttk.Button(row, text="Start Healthy Simulation", style="Accent.TButton", command=lambda: self._start_simulation("healthy")).pack(side="left", padx=(0,8))
-        ttk.Button(row, text="Run Diagnostic Scan", command=self._run_scan).pack(side="left", padx=8)
-        ttk.Button(row, text="Generate PDF Report", command=self._generate_report).pack(side="left", padx=8)
-        ttk.Button(row, text="Open AI Assistant", command=lambda: self.show_page("ai")).pack(side="left", padx=8)
+        PolygonButton(row, text="Start Healthy Simulation", style="Accent.TButton", command=lambda: self._start_simulation("healthy")).pack(side="left", padx=(0,8))
+        PolygonButton(row, text="Run Diagnostic Scan", command=self._run_scan).pack(side="left", padx=8)
+        PolygonButton(row, text="Generate PDF Report", command=self._generate_report).pack(side="left", padx=8)
+        PolygonButton(row, text="Open AI Assistant", command=lambda: self.show_page("ai")).pack(side="left", padx=8)
         ttk.Separator(quick).pack(fill="x", pady=10)
         ttk.Label(quick, text="AutoMind separates ECU-reported data from diagnostic hypotheses. Suggested causes are never treated as confirmed mechanical diagnoses without testing.", style="PanelMuted.TLabel", wraplength=900).pack(anchor="w")
 
@@ -209,10 +209,10 @@ class AutoMindApplication(tk.Tk):
         self.port_tree.pack(fill="both", expand=True)
         real_buttons = ttk.Frame(real, style="Panel.TFrame")
         real_buttons.pack(fill="x", pady=(12,0))
-        ttk.Button(real_buttons, text="Refresh Ports", command=self._refresh_ports).pack(side="left")
-        ttk.Button(real_buttons, text="Connect", style="Accent.TButton", command=self._connect_selected_port).pack(side="left", padx=8)
-        ttk.Button(real_buttons, text="Reconnect", command=self._reconnect_real).pack(side="left")
-        ttk.Button(real_buttons, text="Disconnect", command=self._disconnect).pack(side="left")
+        PolygonButton(real_buttons, text="Refresh Ports", command=self._refresh_ports).pack(side="left")
+        PolygonButton(real_buttons, text="Connect", style="Accent.TButton", command=self._connect_selected_port).pack(side="left", padx=8)
+        PolygonButton(real_buttons, text="Reconnect", command=self._reconnect_real).pack(side="left")
+        PolygonButton(real_buttons, text="Disconnect", command=self._disconnect).pack(side="left")
         self.adapter_info_var = tk.StringVar(value="No adapter connected")
         ttk.Label(real, textvariable=self.adapter_info_var, style="PanelMuted.TLabel", wraplength=500).pack(anchor="w", pady=(12,0))
 
@@ -224,7 +224,7 @@ class AutoMindApplication(tk.Tk):
         self.sim_key_by_name = {name: key for key, name in names}
         self.sim_scenario_var = tk.StringVar(value=names[0][1])
         ttk.Combobox(sim, textvariable=self.sim_scenario_var, values=[n for _,n in names], state="readonly").pack(fill="x")
-        ttk.Button(sim, text="Start Simulation", style="Accent.TButton", command=self._start_selected_simulation).pack(anchor="w", pady=12)
+        PolygonButton(sim, text="Start Simulation", style="Accent.TButton", command=self._start_selected_simulation).pack(anchor="w", pady=12)
         self.sim_desc = tk.Text(sim, height=15, bg=COLORS["surface"], fg=COLORS["text"], insertbackground=COLORS["text"], relief="flat", wrap="word", font=("Segoe UI", 10), padx=12, pady=12)
         self.sim_desc.pack(fill="both", expand=True)
         self.sim_desc.insert("1.0", "SIMULATION MODE\n\nChoose a scenario and start. AutoMind will create realistic DTCs, live PID values, freeze-frame-like data, local diagnostic findings, history entries, and PDF reports.\n\nSimulated data is never presented as real vehicle data.")
@@ -235,8 +235,8 @@ class AutoMindApplication(tk.Tk):
     def _build_diagnostics(self, page: ttk.Frame) -> None:
         toolbar = ttk.Frame(page)
         toolbar.pack(fill="x", pady=(0,10))
-        ttk.Button(toolbar, text="Run Full Read-Only Scan", style="Accent.TButton", command=self._run_scan).pack(side="left")
-        ttk.Button(toolbar, text="Refresh Live Snapshot", command=self._refresh_live_manual).pack(side="left", padx=8)
+        PolygonButton(toolbar, text="Run Full Read-Only Scan", style="Accent.TButton", command=self._run_scan).pack(side="left")
+        PolygonButton(toolbar, text="Refresh Live Snapshot", command=self._refresh_live_manual).pack(side="left", padx=8)
         self.diag_summary_var = tk.StringVar(value="No active diagnostic session")
         ttk.Label(toolbar, textvariable=self.diag_summary_var, style="Muted.TLabel").pack(side="right")
         panel = ttk.Frame(page, style="Panel.TFrame", padding=14)
@@ -248,7 +248,7 @@ class AutoMindApplication(tk.Tk):
         ttk.Label(notes, text="Technician / User Notes", style="Panel.TLabel", font=("Segoe UI Semibold", 10)).pack(anchor="w")
         self.notes_text = tk.Text(notes, height=4, bg=COLORS["surface"], fg=COLORS["text"], insertbackground=COLORS["text"], relief="flat", wrap="word", font=("Segoe UI", 9), padx=9, pady=7)
         self.notes_text.pack(fill="x", pady=(6,6))
-        ttk.Button(notes, text="Save Notes", command=self._save_notes_from_ui).pack(anchor="e")
+        PolygonButton(notes, text="Save Notes", command=self._save_notes_from_ui).pack(anchor="e")
         self._set_text(self.diagnostics_text, "Connect a real vehicle or start Simulation Mode, then run a read-only diagnostic scan.")
 
     # ---------- DTC ----------
@@ -260,7 +260,7 @@ class AutoMindApplication(tk.Tk):
             self.dtc_tree.heading(c,text=t); self.dtc_tree.column(c,width=w,anchor="w")
         self.dtc_tree.pack(fill="both",expand=True)
         self.dtc_tree.bind("<<TreeviewSelect>>", self._show_selected_dtc)
-        ttk.Button(left,text="Refresh from Current Session",command=self._refresh_dtc_page).pack(anchor="w",pady=(10,0))
+        PolygonButton(left,text="Refresh from Current Session",command=self._refresh_dtc_page).pack(anchor="w",pady=(10,0))
         right = ttk.Frame(page, style="Panel.TFrame", padding=14); right.grid(row=0,column=1,sticky="nsew",padx=(7,0))
         self.dtc_detail = tk.Text(right,bg=COLORS["panel"],fg=COLORS["text"],insertbackground=COLORS["text"],relief="flat",wrap="word",font=("Segoe UI",10),padx=8,pady=8)
         self.dtc_detail.pack(fill="both",expand=True)
@@ -280,9 +280,9 @@ class AutoMindApplication(tk.Tk):
         self.interval_var=tk.StringVar(value=str(self.controller.config.get("diagnostics","sample_interval_ms",750)))
         ttk.Combobox(controls,textvariable=self.interval_var,values=["250","500","750","1000","1500","2000"],state="readonly").pack(fill="x")
         buttons=ttk.Frame(controls,style="Panel.TFrame");buttons.pack(fill="x",pady=10)
-        ttk.Button(buttons,text="Pause",command=lambda:self._set_pause(True)).pack(side="left")
-        ttk.Button(buttons,text="Resume",command=lambda:self._set_pause(False)).pack(side="left",padx=5)
-        ttk.Button(buttons,text="Reset",command=self._reset_chart).pack(side="left")
+        PolygonButton(buttons,text="Pause",command=lambda:self._set_pause(True)).pack(side="left")
+        PolygonButton(buttons,text="Resume",command=lambda:self._set_pause(False)).pack(side="left",padx=5)
+        PolygonButton(buttons,text="Reset",command=self._reset_chart).pack(side="left")
         right=ttk.Frame(page);right.grid(row=0,column=1,sticky="nsew",padx=(7,0));right.grid_rowconfigure(0,weight=2);right.grid_rowconfigure(1,weight=1);right.grid_columnconfigure(0,weight=1)
         self.live_chart=LiveChart(right);self.live_chart.grid(row=0,column=0,sticky="nsew",pady=(0,8))
         self.live_tree=ttk.Treeview(right,columns=("pid","name","value","unit"),show="headings",height=8)
@@ -300,13 +300,13 @@ class AutoMindApplication(tk.Tk):
         ttk.Label(top,text="Cloud AI is optional; local rules work offline.",style="PanelMuted.TLabel").pack(side="right")
         quick=ttk.Frame(chat_panel,style="Panel.TFrame");quick.pack(fill="x",pady=(10,8))
         for label,q in [("Analyze Faults","Analyze the current faults."),("Explain DTCs","Explain the current DTCs and distinguish observed facts from possible causes."),("Recommend Tests","What should be tested first and why?"),("Analyze Live Data","Analyze the current live-data snapshot."),("Generate Summary","Summarize this diagnostic session.")]:
-            ttk.Button(quick,text=label,command=lambda question=q:self._send_ai_question(question)).pack(side="left",padx=(0,6))
+            PolygonButton(quick,text=label,command=lambda question=q:self._send_ai_question(question)).pack(side="left",padx=(0,6))
         self.ai_chat=tk.Text(chat_panel,bg=COLORS["surface"],fg=COLORS["text"],insertbackground=COLORS["text"],relief="flat",wrap="word",font=("Segoe UI",10),padx=12,pady=12)
         self.ai_chat.pack(fill="both",expand=True,pady=(0,10))
         self.ai_chat.insert("end","AutoMind AI Assistant\n\nStart a diagnostic session. When Cloud AI is disabled, questions are answered using the deterministic local diagnostic engine.\n\n")
         input_row=ttk.Frame(chat_panel,style="Panel.TFrame");input_row.pack(fill="x")
         self.ai_question_var=tk.StringVar();entry=ttk.Entry(input_row,textvariable=self.ai_question_var);entry.pack(side="left",fill="x",expand=True);entry.bind("<Return>",lambda _e:self._send_ai_question())
-        ttk.Button(input_row,text="Send",style="Accent.TButton",command=self._send_ai_question).pack(side="left",padx=(8,0))
+        PolygonButton(input_row,text="Send",style="Accent.TButton",command=self._send_ai_question).pack(side="left",padx=(8,0))
 
     # ---------- Profiles ----------
     def _build_profiles(self, page: ttk.Frame) -> None:
@@ -316,7 +316,7 @@ class AutoMindApplication(tk.Tk):
         self.profile_tree.heading("vehicle",text="Vehicle");self.profile_tree.heading("vin",text="VIN")
         self.profile_tree.column("vehicle",width=260);self.profile_tree.column("vin",width=180)
         self.profile_tree.pack(fill="both",expand=True);self.profile_tree.bind("<<TreeviewSelect>>",self._profile_selected)
-        ttk.Button(left,text="Refresh",command=self._refresh_profiles).pack(anchor="w",pady=(10,0))
+        PolygonButton(left,text="Refresh",command=self._refresh_profiles).pack(anchor="w",pady=(10,0))
         form=ttk.Frame(page,style="Panel.TFrame",padding=18);form.grid(row=0,column=1,sticky="nsew",padx=(7,0));form.grid_columnconfigure(1,weight=1)
         ttk.Label(form,text="Vehicle Profile",style="Panel.TLabel",font=("Segoe UI Semibold",13)).grid(row=0,column=0,columnspan=2,sticky="w",pady=(0,12))
         self.profile_vars={k:tk.StringVar() for k in ("manufacturer","model","year","engine","fuel_type","vin","mileage","notes")}
@@ -325,9 +325,9 @@ class AutoMindApplication(tk.Tk):
             ttk.Label(form,text=label,style="PanelMuted.TLabel").grid(row=i,column=0,sticky="w",pady=5,padx=(0,8));ttk.Entry(form,textvariable=self.profile_vars[key]).grid(row=i,column=1,sticky="ew",pady=5)
         self.edit_profile_id=""
         row=ttk.Frame(form,style="Panel.TFrame");row.grid(row=10,column=0,columnspan=2,sticky="w",pady=(14,0))
-        ttk.Button(row,text="New",command=self._new_profile).pack(side="left")
-        ttk.Button(row,text="Save",style="Accent.TButton",command=self._save_profile).pack(side="left",padx=6)
-        ttk.Button(row,text="Delete",style="Danger.TButton",command=self._delete_profile).pack(side="left")
+        PolygonButton(row,text="New",command=self._new_profile).pack(side="left")
+        PolygonButton(row,text="Save",style="Accent.TButton",command=self._save_profile).pack(side="left",padx=6)
+        PolygonButton(row,text="Delete",style="Danger.TButton",command=self._delete_profile).pack(side="left")
 
     # ---------- History ----------
     def _build_history(self, page: ttk.Frame) -> None:
@@ -337,8 +337,8 @@ class AutoMindApplication(tk.Tk):
             self.history_tree.heading(c,text=t);self.history_tree.column(c,width=w,anchor="w")
         self.history_tree.pack(fill="both",expand=True)
         row=ttk.Frame(panel,style="Panel.TFrame");row.pack(fill="x",pady=(10,0))
-        ttk.Button(row,text="Refresh",command=self._refresh_history).pack(side="left")
-        ttk.Button(row,text="Open Selected Session",style="Accent.TButton",command=self._open_history_session).pack(side="left",padx=8)
+        PolygonButton(row,text="Refresh",command=self._refresh_history).pack(side="left")
+        PolygonButton(row,text="Open Selected Session",style="Accent.TButton",command=self._open_history_session).pack(side="left",padx=8)
 
     # ---------- Reports ----------
     def _build_reports(self, page: ttk.Frame) -> None:
@@ -348,9 +348,9 @@ class AutoMindApplication(tk.Tk):
         self.report_status=tk.StringVar(value="No report generated in this run.")
         ttk.Label(panel,textvariable=self.report_status,style="PanelMuted.TLabel",wraplength=850).pack(anchor="w",pady=(0,14))
         row=ttk.Frame(panel,style="Panel.TFrame");row.pack(anchor="w")
-        ttk.Button(row,text="Generate PDF Report",style="Accent.TButton",command=self._generate_report).pack(side="left")
-        ttk.Button(row,text="Save Report As...",command=self._generate_report_as).pack(side="left",padx=8)
-        ttk.Button(row,text="Open Reports Folder",command=self.controller.open_reports_folder).pack(side="left")
+        PolygonButton(row,text="Generate PDF Report",style="Accent.TButton",command=self._generate_report).pack(side="left")
+        PolygonButton(row,text="Save Report As...",command=self._generate_report_as).pack(side="left",padx=8)
+        PolygonButton(row,text="Open Reports Folder",command=self.controller.open_reports_folder).pack(side="left")
         ttk.Separator(panel).pack(fill="x",pady=20)
         ttk.Label(panel,text="Generated Reports",style="Panel.TLabel",font=("Segoe UI Semibold",11)).pack(anchor="w")
         self.reports_tree=ttk.Treeview(panel,columns=("date","session","path"),show="headings",height=8)
@@ -358,8 +358,8 @@ class AutoMindApplication(tk.Tk):
             self.reports_tree.heading(c,text=t);self.reports_tree.column(c,width=w,anchor="w")
         self.reports_tree.pack(fill="both",expand=True,pady=(8,8))
         report_actions=ttk.Frame(panel,style="Panel.TFrame");report_actions.pack(fill="x")
-        ttk.Button(report_actions,text="Refresh List",command=self._refresh_reports).pack(side="left")
-        ttk.Button(report_actions,text="Open Selected Report",command=self._open_selected_report).pack(side="left",padx=8)
+        PolygonButton(report_actions,text="Refresh List",command=self._refresh_reports).pack(side="left")
+        PolygonButton(report_actions,text="Open Selected Report",command=self._open_selected_report).pack(side="left",padx=8)
         ttk.Separator(panel).pack(fill="x",pady=20)
         ttk.Label(panel,text="Report includes",style="Panel.TLabel",font=("Segoe UI Semibold",11)).pack(anchor="w")
         ttk.Label(panel,text="Vehicle information • detected DTCs • live-data summary • freeze frame • local diagnostic interpretation • optional AI analysis • notes • disclaimer",style="PanelMuted.TLabel",wraplength=900).pack(anchor="w",pady=(6,0))
@@ -394,9 +394,9 @@ class AutoMindApplication(tk.Tk):
         ttk.Label(appearance,text="Theme",style="Panel.TLabel").grid(row=0,column=0,sticky="w",pady=6);ttk.Combobox(appearance,textvariable=self.theme_var,values=["dark"],state="readonly").grid(row=0,column=1,sticky="w",pady=6)
         diag=self.settings_tabs["Diagnostics"];self.settings_interval_var=tk.StringVar()
         ttk.Label(diag,text="Default live-data interval (ms)",style="Panel.TLabel").grid(row=0,column=0,sticky="w",pady=6);ttk.Combobox(diag,textvariable=self.settings_interval_var,values=["250","500","750","1000","1500","2000"],state="readonly").grid(row=0,column=1,pady=6)
-        logs=self.settings_tabs["Logs"];ttk.Button(logs,text="Open Log Folder",command=self.controller.open_logs_folder).pack(anchor="w");ttk.Label(logs,text="Logs contain application state and errors but never intentionally include AI secrets.",style="PanelMuted.TLabel",wraplength=700).pack(anchor="w",pady=(10,0))
+        logs=self.settings_tabs["Logs"];PolygonButton(logs,text="Open Log Folder",command=self.controller.open_logs_folder).pack(anchor="w");ttk.Label(logs,text="Logs contain application state and errors but never intentionally include AI secrets.",style="PanelMuted.TLabel",wraplength=700).pack(anchor="w",pady=(10,0))
         about=self.settings_tabs["About"];ttk.Label(about,text=PRODUCT_NAME,style="Panel.TLabel",font=("Segoe UI Semibold",14)).pack(anchor="w");ttk.Label(about,text="Read-focused OBD-II diagnostic assistant with local deterministic reasoning and optional cloud AI.",style="PanelMuted.TLabel",wraplength=750).pack(anchor="w",pady=(6,0))
-        ttk.Button(page,text="Save Settings",style="Accent.TButton",command=self._save_settings).pack(anchor="e",pady=(10,0))
+        PolygonButton(page,text="Save Settings",style="Accent.TButton",command=self._save_settings).pack(anchor="e",pady=(10,0))
 
     # ---------- Actions ----------
     def _run_bg(self, work: Callable, success: Callable | None = None, title: str = "Operation failed") -> None:
@@ -754,8 +754,8 @@ class AutoMindApplication(tk.Tk):
             self.controller.config.set("general","first_run_complete",True);win.destroy()
             if mode=="sim":self._start_simulation("healthy")
             else:self.show_page("connect")
-        ttk.Button(body,text="Try Simulation Mode",style="Accent.TButton",command=lambda:finish("sim")).pack(fill="x",pady=5)
-        ttk.Button(body,text="Connect Real Vehicle",command=lambda:finish("real")).pack(fill="x",pady=5)
+        PolygonButton(body,text="Try Simulation Mode",style="Accent.TButton",command=lambda:finish("sim")).pack(fill="x",pady=5)
+        PolygonButton(body,text="Connect Real Vehicle",command=lambda:finish("real")).pack(fill="x",pady=5)
 
     @staticmethod
     def _set_text(widget:tk.Text,text:str) -> None:

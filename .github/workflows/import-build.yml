@@ -1,48 +1,21 @@
-name: Import and Build AutoMind AI
+name: Build AutoMind AI 0.2
+
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  import-build:
+  windows-build:
     if: github.actor != 'github-actions[bot]'
     runs-on: windows-latest
     timeout-minutes: 45
+
     steps:
       - uses: actions/checkout@v4
-
-      - name: Download source archive parts
-        shell: powershell
-        run: |
-          New-Item -ItemType Directory -Force -Path _parts | Out-Null
-          0..61 | ForEach-Object {
-            $n = $_.ToString("00")
-            $url = "https://raw.githubusercontent.com/saaeiddev/saaeiddev/automind-ci-0.1.0/automind_ci/part$n"
-            Invoke-WebRequest -Uri $url -OutFile "_parts/part$n"
-          }
-
-      - name: Reassemble and import source
-        shell: powershell
-        run: |
-          $parts = Get-ChildItem _parts\part* | Sort-Object Name
-          $zip = Join-Path $PWD "AutoMindAI-Source-0.1.0.zip"
-          $stream = [System.IO.File]::Open($zip,[System.IO.FileMode]::Create)
-          try {
-            foreach ($p in $parts) {
-              $bytes = [System.IO.File]::ReadAllBytes($p.FullName)
-              $stream.Write($bytes,0,$bytes.Length)
-            }
-          } finally { $stream.Dispose() }
-          Expand-Archive $zip -DestinationPath _import -Force
-          if (-not (Test-Path "_import\AutoMindAI\main.py")) { throw "Source import failed." }
-          Get-ChildItem "_import\AutoMindAI" -Force | ForEach-Object {
-            if ($_.Name -ne ".git") { Copy-Item $_.FullName -Destination $PWD -Recurse -Force }
-          }
-          Remove-Item _parts,_import -Recurse -Force
-          Remove-Item $zip -Force
 
       - uses: actions/setup-python@v5
         with:
@@ -54,44 +27,36 @@ jobs:
         shell: powershell
         run: choco install innosetup -y --no-progress
 
-      - name: Build Windows package
+      - name: Build and test Windows installer
         shell: powershell
-        run: .\scripts\build_windows.ps1 -SkipInstallTest
+        run: .\scripts\build_windows.ps1
 
-      - name: Validate packaged executable
-        shell: powershell
-        run: |
-          $exe = Join-Path $PWD "dist\AutoMindAI.exe"
-          $p = Start-Process -FilePath $exe -ArgumentList "--self-test" -Wait -PassThru
-          if ($p.ExitCode -ne 0) { throw "Packaged self-test failed." }
-
-      - name: Validate installer
+      - name: Stage release 0.2.0
         shell: powershell
         run: |
-          $installer = Join-Path $PWD "dist\installer\AutoMindAI-Setup.exe"
-          $testDir = Join-Path $env:RUNNER_TEMP "AutoMindAI-Test"
-          Start-Process -FilePath $installer -ArgumentList @("/VERYSILENT","/SUPPRESSMSGBOXES","/NORESTART","/SP-","/DIR=$testDir") -Wait
-          $installed = Join-Path $testDir "AutoMindAI.exe"
-          if (-not (Test-Path $installed)) { throw "Installed executable missing." }
-          $p = Start-Process -FilePath $installed -ArgumentList "--self-test" -Wait -PassThru
-          if ($p.ExitCode -ne 0) { throw "Installed self-test failed." }
-          $unins = Join-Path $testDir "unins000.exe"
-          Start-Process -FilePath $unins -ArgumentList @("/VERYSILENT","/SUPPRESSMSGBOXES","/NORESTART") -Wait
+          New-Item -ItemType Directory -Force -Path "release\0.2.0" | Out-Null
+          Copy-Item "dist\AutoMindAI.exe" "release\0.2.0\AutoMindAI.exe" -Force
+          Copy-Item "dist\installer\AutoMindAI-Setup.exe" "release\0.2.0\AutoMindAI-Setup.exe" -Force
+          Copy-Item "dist\SHA256SUMS.txt" "release\0.2.0\SHA256SUMS.txt" -Force
 
-      - name: Add release binaries to repository
-        shell: powershell
-        run: |
-          New-Item -ItemType Directory -Force -Path "release\0.1.0" | Out-Null
-          Copy-Item "dist\AutoMindAI.exe" "release\0.1.0\AutoMindAI.exe" -Force
-          Copy-Item "dist\installer\AutoMindAI-Setup.exe" "release\0.1.0\AutoMindAI-Setup.exe" -Force
-          Copy-Item "dist\SHA256SUMS.txt" "release\0.1.0\SHA256SUMS.txt" -Force
+      - name: Upload Windows build
+        uses: actions/upload-artifact@v4
+        with:
+          name: AutoMindAI-Windows-0.2.0
+          path: |
+            dist/AutoMindAI.exe
+            dist/installer/AutoMindAI-Setup.exe
+            dist/SHA256SUMS.txt
+          if-no-files-found: error
 
-      - name: Commit complete project
+      - name: Commit tested release binaries
         shell: powershell
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git reset -- ".github/workflows/windows-build.yml"
-          git commit -m "Import complete AutoMind AI source and Windows release"
-          git push
+          git add release/0.2.0
+          git diff --cached --quiet
+          if ($LASTEXITCODE -ne 0) {
+            git commit -m "Add AutoMind AI 0.2.0 Windows release"
+            git push
+          }

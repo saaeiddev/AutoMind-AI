@@ -1,5 +1,5 @@
 #define MyAppName "AutoMind AI"
-#define MyAppVersion "0.1.0"
+#define MyAppVersion "0.2.0"
 #define MyAppPublisher "AutoMind AI"
 #define MyAppExeName "AutoMindAI.exe"
 
@@ -21,9 +21,9 @@ WizardStyle=modern
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 PrivilegesRequired=admin
-VersionInfoVersion=0.1.0.0
+VersionInfoVersion=0.2.0.0
 VersionInfoProductName=AutoMind AI
-VersionInfoDescription=AutoMind AI Installer
+VersionInfoDescription=AutoMind AI 0.2 Installer
 VersionInfoCompany=AutoMind AI
 VersionInfoCopyright=Copyright (c) 2026
 
